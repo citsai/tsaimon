@@ -1,0 +1,21 @@
+extends layoutHistory
+
+block content
+  h1= title
+  #Return
+    form
+      input#btnMain(type="button", value="Main Menu", onclick="window.location.href='/'")
+  #selWeek
+      input#inputStartWeek(type="week", name="startWeek")
+      button#btnPrevWeek Prev
+      button#btnNextWeek Next
+  #chart1
+    div(
+      style='width: 100%; height:300px;'
+      id='barDailySum'
+    )
+  #chart2
+    div(
+      style='width: 100%; height:300px;'
+      id='dayChartSum'
+    )

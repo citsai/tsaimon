@@ -1,0 +1,25 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+#displayHeat {
+	position: relative;
+	left: 150px;
+	top: -95px;
+}
+
+#tableSensor {
+	position: relative;
+	top: -170px;
+	left: 300px;
+}
+
+#chart1 {
+	position: relative;
+	top: -150px;
+}
+
+a {
+  color: #00B7FF;
+}

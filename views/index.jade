@@ -1,0 +1,106 @@
+extends layoutMain
+block content
+  h1= title
+  input(
+    type='checkbox'
+    id='pause'
+  )
+  span Pause
+  #changeSP
+    input#inputSPNew(type="number", min="100", max="140", value="120", name="SPNew")
+    span
+    select#selMode(name="mode")
+      option Hybrid
+      option Heat Pump
+      option High Demand
+      option Standard Electric
+      option Vacation
+    span  Dehumidification
+    input(
+      type='checkbox'
+      id='checkDehum'
+    )
+    br
+    button#btnSPNew Change SP/Mode/Dehum
+    br
+    br
+  #otherPages
+    form
+      input#btnSchedule(type="button", value="Schedule", onclick="window.location.href='/schedule'")
+      input#btnHistory(type="button", value="History", onclick="window.location.href='/history'")
+      input#btnHistory(type="button", value="Alerts", onclick="window.location.href='/alerts'")
+      input#btnHistory(type="button", value="Manual", onclick="window.location.href='/super'")
+    br
+  #displayMode
+    | Set Point  
+    input#inputSP(type="text", size=1, maxlength=3, name="SP", value=0)
+    |  Dehumidification
+    input(
+      type='checkbox'
+      id='checkDehumStat'
+    )
+    br
+    input#inputHybrid(type="radio", name="mode", value="Hybrid")
+    | Hybrid
+    br
+    input#inputHeatPump(type="radio", name="mode", value="Heat Pump")
+    | Heat Pump
+    br
+    input#inputHighDemand(type="radio", name="mode", value="High Demand")
+    | High Demand
+    br
+    input#inputStdElec(type="radio", name="mode", value="Standard Electric")
+    | Standard Electric
+    br
+    input#inputVacation(type="radio", name="mode", value="Vacation")
+    |Vacation
+    br
+  #displayHeat
+    input#inputUE(type="radio", name="heatUE", value="UE")
+    | UE
+    br
+    input#inputLE(type="radio", name="heatLE", value="LE")
+    | LE
+    br
+    input#inputCOMP(type="radio", name="heatCOMP", value="COMP")
+    | Compressor
+    br
+    input#inputFAN(type="radio", name="heatFAN", value="FAN")
+    | Fan
+    br    
+  #tableSensor    
+    | T2 = 
+    span#T2
+    br
+    | T3a = 
+    span#T3a
+    br
+    | T3b = 
+    span#T3b
+    br
+    | T4 =
+    span#T4
+    br
+    | T5 =
+    span#T5
+    br
+    | EEV = 
+    span#EEV
+    br
+    | Flow = 
+    span#Flow
+    br
+    | Volt = 
+    span#Volt
+    br
+    | Amp = 
+    span#Amp
+    br
+    | Watt = 
+    span#Watt
+    br
+  #chart1
+    div(
+      style='width: 100%; height:300px;'
+      id='myChart2'
+    )

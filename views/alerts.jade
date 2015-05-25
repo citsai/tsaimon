@@ -1,0 +1,41 @@
+extends layoutAlerts
+
+block content
+  h1= title
+  #Return
+    form
+      input#btnMain(type="button", value="Main Menu", onclick="window.location.href='/'")
+    br
+    br
+  #selEmail
+    form
+      input#inputEmail(type="text", value="email address")
+      button#btnChangeEmail Change Email
+      button#btnEmail Email Test
+  #selAlert
+    h2 Alerts that are active:
+    form
+      input#checkEnergyOver(type='checkbox')
+      | Daily Energy Over  
+      input#inputKwhrLimit(type='number',min=0, max=100, value = 5,step = 0.5, size=1, maxlength=3)
+      |   KWhrs
+      br
+      input#checkStandbyLow(type='checkbox')
+      | Daily Standby time Less than  
+      input#inputStbyLimit(type='number',min=0, max=100, value = 50,step = 1, size=1, maxlength=3)
+      |   %
+      br
+      input#checkFault(type='checkbox')
+      | New Fault/Error
+      br
+      input#checkModeChanged(type='checkbox')
+      | Mode has changed
+      br
+      input#checkSPChanged(type='checkbox')
+      | Set-Point has changed
+      br
+      input#checkElementUse(type='checkbox')
+      | Back-up resistance element used
+      br
+      button#btnSubmitAlert Apply
+

@@ -1,0 +1,42 @@
+extends layoutSchedule
+
+block content
+  h1= title
+  #return
+    form
+      input#btnMain(type="button", value="Main Menu", onclick="window.location.href='/'")
+  #chart1
+    div(
+      style='width: 100%; height:300px;'
+      id='myChart1'
+    )
+  #entry
+    h2 Enter New Schedule
+    form
+      input#inputSP(type="number", name="SP",placeholder="Set-Point", min="100", max="140", value="120")
+      span F
+      select#selMode(name="mode")
+        option Hybrid
+        option Heat Pump
+        option High Demand
+        option Standard Electric
+        option Vacation
+      select#selDehum (name="dehum")
+        option No Dehum
+        option Yes Dehum
+      input#inputDateTime(type="datetime-local", name="datetime")
+      select#selFrequency(name="frequency")
+        option One-time
+        option Daily
+        option Weekly
+      button#btnEntrySubmit Enter
+  #clear
+    h2 Clear Schedule
+    form
+      input#inputStartClear(type="datetime-local", name="startclear")
+      input#inputEndClear(type="datetime-local", name="endclear")
+      select#selClearFreq(name="clrfreq")
+        option One-time
+        option Daily
+        option Weekly
+      button#btnClearSubmit Clear      
